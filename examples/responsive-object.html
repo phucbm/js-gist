@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive object</title>
+    <script src="../responsive-object.js"></script>
+    <style>
+        #breakpoint-data {
+            position:absolute; top:50%; left:50%;
+            transform:translate(-50%, -50%);
+            text-align:center;
+        }
+        #breakpoint {font-size:30vw;}
+    </style>
+</head>
+<body>
+
+<div id="breakpoint-data">
+    <div id="breakpoint"></div>
+    <pre id="object"></pre>
+</div>
+
+<script>
+    const config = {
+        screen: 'desktop',
+        color: 'white',
+        responsive: [
+            {
+                breakpoint: 1280,
+                settings: {
+                    screen: '1280',
+                    color: 'blue',
+                    isTablet: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    screen: '768',
+                }
+            }
+        ]
+    };
+
+    new ResponsiveObject({
+        object: config,
+        onMatched: (data) => {
+            document.getElementById('breakpoint').innerText = data.breakpoint;
+            document.getElementById('object').innerText = JSON.stringify(data.object);
+            console.log('onMatched', data);
+        }
+    });
+</script>
+
+</body>
+</html>
