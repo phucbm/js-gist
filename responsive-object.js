@@ -1,16 +1,34 @@
-/**
- * Responsive Object v1.0.0
+/**!
+ * Responsive Object v1.0.1
+ * https://github.com/phucbm/js-gist/blob/main/responsive-object.js
  */
 class ResponsiveObject{
     constructor(config){
         this.object = config.object || undefined;
-        if(!this.object || !this.object.responsive) return false;
+        if(!this.object) return;
 
         // callbacks
         this.onMatched = config.onMatched || function(){
         };
         this.onUpdate = config.onUpdate || function(){
         };
+
+        // exit if there is no responsive object
+        if(!this.object.responsive){
+            // update
+            this.currentObject = {
+                type: 'no-responsive',
+                lastBreakpoint: undefined,
+                breakpoint: -1,
+                object: this.mergeObject(-1, this.object)
+            };
+
+            // callback onMatched
+            if(typeof this.onMatched === 'function'){
+                this.onMatched(this.currentObject);
+            }
+            return false;
+        }
 
         // if the current object don't have this key, search from the closest breakpoint above
         this.isInherit = typeof config.isInherit === 'undefined' ? true : config.isInherit;
