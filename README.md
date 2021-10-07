@@ -3,10 +3,13 @@
 ## Table of Content
 
 - [Copy text to clipboard](/copy-text-to-clipboard.js)
+- [Format datetime](/format-datetime.js)
 - [Check is valid URL](/is-valid-url.js)
-- [String to slug](/string-to-slug.js)
-- [Generate unique ID](/unique-id.js)
 - [Responsive Object](/responsive-object.js)
+- [Sort array of object by value](/sort-array-by-object-value.js)
+- [String to slug](/string-to-slug.js)
+- [Time Since](/time-since.js)
+- [Generate unique ID](/unique-id.js)
 
 ## Usage
 
