@@ -1,6 +1,16 @@
 # 🩹 JavaScript Snippets
 
-### Responsive Object v1.0.0 - [demo](/examples/responsive-object.html)
+## Table of Content
+
+- [Copy text to clipboard](/copy-text-to-clipboard.js)
+- [Check is valid URL](/is-valid-url.js)
+- [String to slug](/string-to-slug.js)
+- [Generate unique ID](/unique-id.js)
+- [Responsive Object](/responsive-object.js)
+
+## Usage
+
+### Responsive Object v1.0.1 - [demo](/examples/responsive-object.html)
 
 Return the correct setting object based on the current breakpoint using `matchMedia()`
 
