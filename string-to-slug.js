@@ -1,11 +1,11 @@
 /**
  * String to slug
  * https://stackoverflow.com/a/1054862/10636614
- * @param Text
+ * @param string
  * @returns {string}
  */
-function stringToSlug(Text){
-    return Text
+function stringToSlug(string = ''){
+    return string
         .toLowerCase()
         .replace(/[^\w ]+/g, '')
         .replace(/ +/g, '-');
