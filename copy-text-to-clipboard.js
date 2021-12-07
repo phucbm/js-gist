@@ -9,6 +9,7 @@ function copyTextToClipboard($target){
 }
 
 
+// (better compatibility)
 /**
  * Copy text to clipboard from given value
  * @param val
