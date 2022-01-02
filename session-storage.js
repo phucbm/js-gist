@@ -1,20 +1,20 @@
-class MySessionStorage{
-    constructor(key, defaultValue = {}){
+/**
+ * Manage object in session|local storage
+ */
+class MyStorage{
+    constructor(key){
         this.key = key;
-        if(!this.get()){
-            sessionStorage.setItem(key, JSON.stringify(defaultValue));
-        }
     }
 
-    set(value){
-        sessionStorage.setItem(this.key, JSON.stringify(value));
+    set(object){
+        localStorage.setItem(this.key, JSON.stringify(object));
     }
 
     get(){
-        return JSON.parse(sessionStorage.getItem(this.key));
+        return JSON.parse(localStorage.getItem(this.key));
     }
 
     clear(){
-        sessionStorage.removeItem(this.key);
+        localStorage.removeItem(this.key);
     }
 }
